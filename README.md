@@ -1,4 +1,6 @@
 # Stock-Trading-Algorithm-1
-A simple stock trading algorithm using a moving average crossover. You can control the short moving average and the long moving average. Using apple stock with a short MA of 5 and a long MA of 26 I got a 33% return over a three year period.
+I am creating multiple simple strock trading algorithms using AAPL data provided by yfinance from 2020-01-01 to 2023-01-01.
 
-This is my first stock trading algorithm and it is very simple and only uses historic data from yfinance from 2020-01-01 to 2023-01-01. This was during a time when apple shares decreased from $148 to $128, so I am very pleased with a 33% return on my investment.
+Algorithm_1.py is simply a moving average crossover strategy. One is able to control the short run moving average and the long run moving average. Using a short run moving average of 5 days and a long run moving average of 6 days I was able to get a 90.3% return on investment over the 3 years.
+
+Algorithm_3.py is just a bollinger band strategy. You can adjust the length of time over which you calculate the standard deviation and the moving average. Calculating the moving average of 56 days and the standard deviation over 7 days I was able to get an 82.2% return on investment over the 3 years, but this was far more variable depending on what numbers I used to calculate the standard deviation and the length of time for the moving average as small variations in these numbers led to large differences in returns on investment.
