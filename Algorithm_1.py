@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+#This is a simple moving average crossover strategy
+
 short_window = 5
 long_window = 26
 
@@ -13,7 +15,6 @@ apple[f"MA{long_window}"] = apple['Close'].rolling(window=long_window).mean()
 yesterday = 0
 cash = 10000
 shares = 0
-buy=0
 
 if shares == 0:
     for date in apple.index:
@@ -26,19 +27,17 @@ if shares == 0:
             if mashort < malong:
                 today = 0
             if today > yesterday:
-                shares = 50
+                shares = cash // price
                 cash -= shares * price
-                buy = buy+1
             if today < yesterday:
                 cash += shares * price
                 shares = 0
             yesterday = today
-        print(price, shares, cash)
-    if shares > 0:    
-        cash = cash + shares * price
+        print(cash, price, shares)
+        
+    cash = cash + shares * price
     print()
-    print(cash)    
+    print(cash)
 
-print(buy)
 
 
