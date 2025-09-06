@@ -9,7 +9,9 @@ Algorithm_2.py is a mix of moving average crossover and a bollinger band strateg
 It predominantly follows the moving average crossover, but if the price falls above or below x standard deviations of the mean, the bollinger band strategy will kick in and not stop until the price is within one standard deviation of the mean, at which point it will follow the original moving average crossover strategy.
 I first tried this strategy with x = 6 and I got a value of 73.3% return which is less than the original moving average crossover strategy. So I decided to get it to run for all values of x between 2 and 19 inclusive, from which I got the results:
 [18520.34729385376, 16662.038387298584, 15496.102798461914, 13744.128890991211, 17239.898361206055, 15025.32022857666, 14310.972900390625, 15625.351768493652, 13739.955039978027, 13739.955039978027, 15921.805122375488, 15921.805122375488, 15921.805122375488, 15921.805122375488, 19029.76670074463, 19029.76670074463, 19029.76670074463, 19029.76670074463]
-
 None of these values are greater than the 90.3%, although some are equal because the bollinger bond strategy is never used.
 Also what is notable is that none of them are greater than the bollinger band strategy on its own other than using x = 2.
 Therefore, I have come to the conclusion that mixing the two strategies makes an overall strategy that is generally weaker than either of its parent strategies.
+
+Algorithm_4.py uses a relative strength index to measure momentum with a moving average filter. You can edit the size of the window to measure the relative strength inex. Using a window size of 14 I was only able to get a 7.6% return on my investment over 3 years, but I attribute this to the fact that I was using apple stock which is unlikely to be particularly over bought or under bought and therefore is unlikely to have large variablity in the relative strength index, which makes it difficult for this algorithm to profit.
+
