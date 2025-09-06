@@ -13,6 +13,7 @@ apple[f"MA{long_window}"] = apple['Close'].rolling(window=long_window).mean()
 yesterday = 0
 cash = 10000
 shares = 0
+buy=0
 
 if shares == 0:
     for date in apple.index:
@@ -27,13 +28,17 @@ if shares == 0:
             if today > yesterday:
                 shares = 50
                 cash -= shares * price
+                buy = buy+1
             if today < yesterday:
                 cash += shares * price
                 shares = 0
             yesterday = today
-        print(price)
-        
-    cash = cash + shares * price
+        print(price, shares, cash)
+    if shares > 0:    
+        cash = cash + shares * price
     print()
     print(cash)    
+
+print(buy)
+
 
