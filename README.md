@@ -15,3 +15,6 @@ Therefore, I have come to the conclusion that mixing the two strategies makes an
 
 Algorithm_4.py uses a relative strength index to measure momentum with a moving average filter. You can edit the size of the window to measure the relative strength inex. Using a window size of 14 I was only able to get a 7.6% return on my investment over 3 years, but I attribute this to the fact that I was using apple stock which is unlikely to be particularly over bought or under bought and therefore is unlikely to have large variablity in the relative strength index, which makes it difficult for this algorithm to profit.
 
+Algorithm_5.py uses a regression of RSI, short run moving average, and variance to predict whether the price will increase or decrease. None of these things were particularly good predictors, so during a time when apple stock was decreasing in value, I made a 20% loss. It would work a lot better if I had some more predictive variables.
+
+Algorithm_6.py uses a very simple strategy of if the price increased yesterday then I buy, and if the price decreased yesterday then I sell. From this very simple strategy I was able to get a 52.3% return over the three years.
